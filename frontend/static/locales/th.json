@@ -1,8 +1,8 @@
 {
     "UNSAFE ALERT - UnsafeAlert.js": "Alert that shows on top when browsing from the unsafe clearnet sites",
     "You are not using RoboSats privately": "คุณไม่ได้ใช้ RoboSats อย่างมีความเป็นส่วนตัว",
-    "desktop_unsafe_alert": "การทำงานบางอย่างจะไม่สามารถดำเนินการได้เพื่อปกป้องความเป็นส่วนตัวของคุณ (เช่น การแชท) และคุณจะไม่สามารถทำการซื้อขายบิตคอยน์ได้ เพื่อปกป้องความเป็นส่วนตัวของคุณและใช้งาน RoboSats กรุณาติดตั้ง <1>Tor Browser</1> และใช้งานผ่านเว็บไซต์ <3>Onion</3>",
-    "phone_unsafe_alert": "คุณจะไม่สามารถดำเนินการซื้อขายได้ กรุณาใช้ <1>Tor Browser</1> และเข้าใช้งานผ่านเว็บไซต์ <3>Onion</3>",
+    "desktop_unsafe_alert": "การทำงานบางอย่างจะไม่สามารถดำเนินการได้เพื่อปกป้องความเป็นส่วนตัวของคุณ (เช่น การแชท) และคุณจะไม่สามารถทำการซื้อขายบิตคอยน์ได้ เพื่อปกป้องความเป็นส่วนตัวของคุณและใช้งานทุกฟีเจอร์ของ RoboSats กรุณาติดตั้ง <1>Tor Browser</1> และใช้งานผ่านเว็บไซต์ <3>Onion</3>",
+    "phone_unsafe_alert": "คุณไม่สามารถซื้อขายได้ กรุณาใช้ <1>Tor Browser</1> และใช้งานผ่านเว็บไซต์ <3>Onion</3>",
     "Hide":"ซ่อน",
 
 
@@ -28,11 +28,11 @@
     "MAKER PAGE - MakerPage.js": "This is the page where users can create new orders",
     "Order":"รายการซื้อขาย",
     "Customize":"ปรับแต่ง",
-    "Buy or Sell Bitcoin?":"คุณต้องการซื้อหรือขาย Bitcoin?",
+    "Buy or Sell Bitcoin?":"คุณต้องการซื้อหรือขาย BTC?",
     "Buy":"ซื้อ",
     "Sell":"ขาย",
     "Amount":"จำนวน",
-    "Amount of fiat to exchange for bitcoin":"ระบุจำนวนเงินเฟียตที่ต้องการใช้แลกเปลี่ยนกับ Bitcoin",
+    "Amount of fiat to exchange for bitcoin":"ระบุจำนวนเงินเฟียตที่ต้องการใช้แลกเปลี่ยนกับ BTC",
     "Invalid":"ไม่ถูกต้อง",
     "Enter your preferred fiat payment methods. Fast methods are highly recommended.":"ระบุวิธีการชำระเงินเฟียตที่คุณต้องการใช้ (ควรใช้วิธีที่มีความรวดเร็ว)",
     "Must be shorter than 65 characters":"ต้องสั้นกว่า 65 ตัวอักษร",
