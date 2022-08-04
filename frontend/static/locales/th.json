@@ -1,7 +1,7 @@
 {
     "UNSAFE ALERT - UnsafeAlert.js": "Alert that shows on top when browsing from the unsafe clearnet sites",
-    "You are not using RoboSats privately": "คุณไม่ได้ใช้ RoboSats อย่างมีความเป็นส่วนตัว",
-    "desktop_unsafe_alert": "การทำงานบางอย่างจะไม่สามารถดำเนินการได้เพื่อปกป้องความเป็นส่วนตัวของคุณ (เช่น การแชท) และคุณจะไม่สามารถทำการซื้อขายบิตคอยน์ได้ เพื่อปกป้องความเป็นส่วนตัวของคุณและใช้งานทุกฟีเจอร์ของ RoboSats กรุณาติดตั้ง <1>Tor Browser</1> และใช้งานผ่านเว็บไซต์ <3>Onion</3>",
+    "You are not using RoboSats privately": "ระวัง! ข้อมูลส่วนตัวอาจรั่วไหล",
+    "desktop_unsafe_alert": "ฟีเจอร์บางอย่างถูกระงับเพื่อปกปิดตัวตนของคุณ (เช่น การแชท) และคุณไม่สามารถทำการซื้อขายบิตคอยน์ได้ หากต้องการใช้งานทุกฟีเจอร์ของ RoboSats อย่างปลอดภัย กรุณาติดตั้ง <1>Tor Browser</1> และใช้งานผ่านเว็บไซต์ <3>Onion</3>",
     "phone_unsafe_alert": "คุณไม่สามารถซื้อขายได้ กรุณาใช้ <1>Tor Browser</1> และใช้งานผ่านเว็บไซต์ <3>Onion</3>",
     "Hide":"ซ่อน",
 
@@ -16,7 +16,7 @@
     "Generate Robot":"สร้างโรบอทใหม่",
     "You must enter a new token first":"คุณต้องป้อนค่า token ก่อน",
     "Make Order":"สร้างรายการซื้อขาย",
-    "Info":"ช้อมูล",
+    "Info":"ข้อมูล",
     "View Book":"ดูรายการ",
     "Learn RoboSats":"เรียนรู้การใช้งาน",
     "You are about to visit Learn RoboSats. It hosts tutorials and documentation to help you learn how to use RoboSats and understand how it works.":"คุณกำลังเข้าสู่หน้าการเรียนรู้การใช้งาน RoboSats คุณสามารถศึกษาวิธีการใช้งานแพล้ตฟอร์มและทำความเข้าใจการทำงานของแพล้ตฟอร์มได้ที่นี่",
