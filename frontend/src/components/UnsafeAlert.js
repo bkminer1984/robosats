@@ -36,13 +36,16 @@ class UnsafeAlert extends Component {
   render() {
     console.log('1111')
     const { t, i18n} = this.props;
-    
+
+    // If alert is hidden return null
+    if (!this.state.show){return null}
+
     // Show selfhosted notice
     if (this.state.isSelfhosted){
       return(
         <div>
           <Paper elevation={6} className="alertUnsafe">
-            <Alert severity="success"  sx={{maxHeight:"100px"}} 
+            <Alert severity="success"  sx={{maxHeight:"120px"}} 
               action={<Button onClick={() => this.setState({show:false})}>{t("Hide")}</Button>}
               >
               <AlertTitle>{t("You are self-hosting RoboSats")}</AlertTitle>
@@ -54,7 +57,7 @@ class UnsafeAlert extends Component {
     }
 
     // Show unsafe alert
-    if (!this.safe_urls.includes(this.getHost()) & this.state.show & !this.state.isSelfhosted){
+    if (!this.safe_urls.includes(this.getHost())){
       return(
         <div>
           <MediaQuery minWidth={800}>
