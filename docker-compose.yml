@@ -33,7 +33,7 @@ services:
       DEVELOPMENT: 1
     volumes:
       - .:/usr/src/robosats
-      - /mnt/development/lnd:/lnd
+      - ./node/lnd:/lnd
     network_mode: service:tor
     command: python3 -u manage.py runserver 0.0.0.0:8000
 
@@ -45,6 +45,16 @@ services:
     volumes:
       - ./frontend:/usr/src/frontend
 
+  nodeapp: # Umbrel / Citadel app
+    build: ./nodeapp
+    container_name: nodeapp-dev
+    restart: always
+    environment:
+      TOR_PROXY_IP: 127.0.0.1
+      TOR_PROXY_PORT: 9050
+      ROBOSATS_ONION: robosats6tkf3eva7x2voqso3a5wcorsnw34jveyxfqi2fu7oyheasid.onion
+    network_mode: service:tor
+
   clean-orders:
     image: backend
     restart: always
@@ -52,7 +62,7 @@ services:
     command: python3 manage.py clean_orders
     volumes:
       - .:/usr/src/robosats
-      - /mnt/development/lnd:/lnd
+      - ./node/lnd:/lnd
     network_mode: service:tor
 
   follow-invoices:
@@ -65,7 +75,7 @@ services:
     command: python3 manage.py follow_invoices
     volumes:
       - .:/usr/src/robosats
-      - /mnt/development/lnd:/lnd
+      - ./node/lnd:/lnd
     network_mode: service:tor
 
   telegram-watcher:
@@ -75,7 +85,7 @@ services:
     command: python3 manage.py telegram_watcher
     volumes:
       - .:/usr/src/robosats
-      - /mnt/development/lnd:/lnd
+      - ./node/lnd:/lnd
     network_mode: service:tor
 
   celery:
@@ -87,7 +97,7 @@ services:
       REDIS_URL: redis://localhost:6379
     volumes:
       - .:/usr/src/robosats
-      - /mnt/development/lnd:/lnd
+      - ./node/lnd:/lnd
     network_mode: service:tor
 
   i2p:
@@ -105,10 +115,11 @@ services:
       LOCAL_USER_ID: 1000
       LOCAL_GROUP_ID: 1000
     volumes:
-      - /mnt/development/tor/data:/var/lib/tor
-      - /mnt/development/tor/config:/etc/tor
+      - ./node/tor/data:/var/lib/tor
+      - ./node/tor/config:/etc/tor
     ports:
-      - 8000:8000
+      - 8000:8000     # dev frontend build
+      - 12596:12596   # umbrel frontend
 
   lnd:
     build: ./docker/lnd
@@ -119,10 +130,10 @@ services:
       - tor
       - bitcoind
     volumes:
-      - /mnt/development/tor/data:/var/lib/tor
-      - /mnt/development/tor/config:/etc/tor
-      - /mnt/development/lnd:/home/lnd/.lnd
-      - /mnt/development/lnd:/root/.lnd
+      - ./node/tor/data:/var/lib/tor
+      - ./node/tor/config:/etc/tor
+      - ./node/lnd:/home/lnd/.lnd
+      - ./node/lnd:/root/.lnd
     command: lnd
     environment:
       LOCAL_USER_ID: 1000
@@ -142,9 +153,9 @@ services:
       - tor
     network_mode: service:tor
     volumes:
-      - /mnt/development/tor/data:/var/lib/tor:ro
-      - /mnt/development/tor/config:/etc/tor:ro
-      - /mnt/development/bitcoin:/home/bitcoin/.bitcoin
+      - ./node/tor/data:/var/lib/tor:ro
+      - ./node/tor/config:/etc/tor:ro
+      - ./node/bitcoin:/home/bitcoin/.bitcoin
   
   postgres:
     image: postgres:14.2-alpine

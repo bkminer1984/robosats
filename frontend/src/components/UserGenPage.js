@@ -86,6 +86,7 @@ class UserGenPage extends Component {
               bad_request: data.bad_request,
               found: data.found,
               loadingRobot:false,
+              stealthInvoices: data.wants_stealth,
           })
           &
           // Add nick and token to App state (token only if not a bad request)
@@ -96,6 +97,7 @@ class UserGenPage extends Component {
             referralCode: data.referral_code,
             earnedRewards: data.earned_rewards,
             lastOrderId: data.last_order_id ? data.last_order_id : null,
+            stealthInvoices: data.wants_stealth,
           })
           :
           (this.props.setAppState({
@@ -106,6 +108,7 @@ class UserGenPage extends Component {
             lastOrderId: data.last_order_id ? data.last_order_id : null,
             referralCode: data.referral_code,
             earnedRewards: data.earned_rewards,
+            stealthInvoices: data.wants_stealth,
           })) & writeCookie("robot_token",token) 
               & writeCookie("pub_key",data.public_key.split('\n').join('\\')) 
               & writeCookie("enc_priv_key",data.encrypted_private_key.split('\n').join('\\')))
@@ -296,7 +299,7 @@ class UserGenPage extends Component {
             <ButtonGroup variant="contained" aria-label="outlined primary button group">
               <Button disabled={this.state.loadingRobot || !(this.props.token ? getCookie('robot_token')==this.props.token : true )} color='primary' to='/make/' component={Link}>{t("Make Order")}</Button>
               <Button color='inherit' style={{color: '#111111'}} onClick={this.handleClickOpenInfo}>{t("Info")}</Button>
-              <InfoDialog open={Boolean(this.state.openInfo)} maxAmount='3,000,000' onClose = {this.handleCloseInfo}/>
+              <InfoDialog open={Boolean(this.state.openInfo)} maxAmount='4,000,000' onClose = {this.handleCloseInfo}/>
               <Button disabled={this.state.loadingRobot || !(this.props.token ? getCookie('robot_token')==this.props.token : true )} color='secondary' to='/book/' component={Link}>{t("View Book")}</Button>
             </ButtonGroup>
           </Grid>
