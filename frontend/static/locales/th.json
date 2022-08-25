@@ -452,7 +452,7 @@
     "Your TXID":"TXID ของคุณ",
     "Lightning":"Lightning",
     "Onchain":"Onchain",
-    "open_dispute":"คุณต้องรอก่อนจึงจะสามารถร้องเรียนได้ <1><1/>",
+    "open_dispute":"กรุณารอ <1><1/> ก่อนเปิดเรื่องร้องเรียน",
     "Trade Summary":"สรุปการซื้อขาย",
     "Maker":"Maker",
     "Taker":"Taker",
